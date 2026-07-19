@@ -1,4 +1,4 @@
-package hangmango
+package main
 
 import (
 	"bufio"

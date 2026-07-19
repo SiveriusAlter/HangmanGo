@@ -1,29 +1,13 @@
-package hangmango
+package main
 
 import (
 	"bufio"
 	"fmt"
 	"os"
-	"path/filepath"
 	"strings"
 )
 
-func main() {
-	exe, err := os.Executable()
-	if err != nil {
-		panic(err)
-	}
-
-	exeDir := filepath.Dir(exe)
-	dictPath := filepath.Join(exeDir, "src", "dictionary.txt")
-
-	dictionary := GetDictionary(dictPath)
-
-	game(dictionary)
-
-}
-
-func game(dictionary []string) {
+func Game(dictionary []string) {
 	fmt.Println("Привет! Хороший денёк для повешания!")
 	word := RandomWord(dictionary)
 
