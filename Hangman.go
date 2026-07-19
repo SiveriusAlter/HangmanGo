@@ -36,6 +36,11 @@ func getDictionary(dictPath string) []string {
 	var dictionary []string
 	for scanner.Scan() {
 		dictionary = append(dictionary, scanner.Text())
+		if scanner.Err() != nil {
+			fmt.Printf("При загрузке %s из словаря упала ошибка %v!",
+				scanner.Text(),
+				scanner.Err())
+		}
 	}
 
 	return dictionary
